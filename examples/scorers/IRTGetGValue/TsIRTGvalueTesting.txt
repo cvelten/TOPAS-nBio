@@ -40,30 +40,34 @@ s:Ge/sWorld/Material ="G4_WATER"
 s:Ge/sWorld/Type = "TsBox"
 s:Ge/sWorld/Parent = "World"
 
-s:Ge/pWorld/Type = "TsBox"
-s:Ge/pWorld/Parent = "World"
-b:Ge/pWorld/IsParallel = "True"
-d:Ge/pWorld/HLX= Ge/World/HLX cm 
-d:Ge/pWorld/HLY= Ge/World/HLY cm 
-d:Ge/pWorld/HLZ= Ge/World/HLZ cm 
+# s:Ge/pWorld/Type = "TsBox"
+# s:Ge/pWorld/Parent = "World"
+# b:Ge/pWorld/IsParallel = "True"
+# d:Ge/pWorld/HLX= Ge/World/HLX cm 
+# d:Ge/pWorld/HLY= Ge/World/HLY cm 
+# d:Ge/pWorld/HLZ= Ge/World/HLZ cm 
+# s:Ge/pWorld/ParallelWorldName = "pWorld"
+
+b:Ts/AllowParallelChemistry = "True"
+s:Ch/UseParallelWorld = "ChemistryWorld"
 
 
-s:Ge/SV/Type = "TsBox"
-s:Ge/SV/Parent = "pWorld"
-b:Ge/SV/IsParallel = "True"
-# s:Ge/SV/Material = "G4_WATER"
-d:Ge/SV/HLX = 2 cm
-d:Ge/SV/HLY = 2 cm
-d:Ge/SV/HLZ = 2 cm
-d:Ge/SV/TransX = 1 cm
-s:Ge/SV2/Type = "TsBox"
-s:Ge/SV2/Parent = "pWorld"
-b:Ge/SV2/IsParallel = "True"
-# s:Ge/SV2/Material = "G4_WATER"
-d:Ge/SV2/HLX = 2 cm
-d:Ge/SV2/HLY = 2 cm
-d:Ge/SV2/HLZ = 2 cm
-d:Ge/SV2/TransX = -3 cm
+# s:Ge/SV/Type = "TsBox"
+# s:Ge/SV/Parent = "pWorld"
+# b:Ge/SV/IsParallel = "True"
+# # s:Ge/SV/Material = "G4_WATER"
+# d:Ge/SV/HLX = 2 cm
+# d:Ge/SV/HLY = 2 cm
+# d:Ge/SV/HLZ = 2 cm
+# d:Ge/SV/TransX = 1 cm
+# s:Ge/SV2/Type = "TsBox"
+# s:Ge/SV2/Parent = "pWorld"
+# b:Ge/SV2/IsParallel = "True"
+# # s:Ge/SV2/Material = "G4_WATER"
+# d:Ge/SV2/HLX = 2 cm
+# d:Ge/SV2/HLY = 2 cm
+# d:Ge/SV2/HLZ = 2 cm
+# d:Ge/SV2/TransX = -3 cm
 
 ##########################
 ######### Source #########
@@ -84,18 +88,18 @@ i:So/Demo/NumberOfHistoriesInRun = 3000
 
 u:perCent = 0.01 
 
-s:Sc/nbOfMol/Quantity = "TsIRTGvalue"
-s:Sc/nbOfMol/Component = "sWorld"
-s:Sc/nbOfMol/OutputFile = "electron_Gvalue"
-s:Sc/nbOfMol/IfOutputFileAlreadyExists = "Overwrite"
-s:Sc/nbOfMol/OutputType                           = "ASCII"
-d:Sc/nbOfMol/KillPrimaryIfEnergyLossExceeds       = So/Demo/BeamEnergy keV * perCent
-d:Sc/nbOfMol/AbortEventIfPrimaryEnergyLossExceeds = 1.01 * Sc/nbOfMol/KillPrimaryIfEnergyLossExceeds keV
-d:Sc/nbOfMol/KillPrimaryBasedOnTrackLength        = 100 um
-i:Sc/nbOfMol/OutputBufferSize = 1
-d:Sc/nbOfMol/CutOffTime = 1 ps
-d:Sc/nbOfMol/TimeLower = 1.0 ps
-d:Sc/nbOfMol/TimeUpper = 1e6 ps 
-i:Sc/nbOfMol/TimeBins  = 100
+# s:Sc/nbOfMol/Quantity = "TsIRTGvalue"
+# s:Sc/nbOfMol/Component = "sWorld"
+# s:Sc/nbOfMol/OutputFile = "electron_Gvalue"
+# s:Sc/nbOfMol/IfOutputFileAlreadyExists = "Overwrite"
+# s:Sc/nbOfMol/OutputType                           = "ASCII"
+# d:Sc/nbOfMol/KillPrimaryIfEnergyLossExceeds       = So/Demo/BeamEnergy keV * perCent
+# d:Sc/nbOfMol/AbortEventIfPrimaryEnergyLossExceeds = 1.01 * Sc/nbOfMol/KillPrimaryIfEnergyLossExceeds keV
+# d:Sc/nbOfMol/KillPrimaryBasedOnTrackLength        = 100 um
+# i:Sc/nbOfMol/OutputBufferSize = 1
+# d:Sc/nbOfMol/CutOffTime = 1 ps
+# d:Sc/nbOfMol/TimeLower = 1.0 ps
+# d:Sc/nbOfMol/TimeUpper = 1e6 ps 
+# i:Sc/nbOfMol/TimeBins  = 100
 
 ##########################
