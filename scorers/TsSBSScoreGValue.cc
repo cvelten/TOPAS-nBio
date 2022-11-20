@@ -91,11 +91,11 @@ G4bool TsSBSScoreGValue::ProcessHits(G4Step* aStep, G4TouchableHistory*)
                 return true;
             }
             if ( fTotalTrackLength >= fMaximumTrackLength ) {
-                aStep->GetTrack()->SetTrackStatus(fStopAndKill);
-                std::cout << " Track killed with track: " << fTotalTrackLength/nm << " nm with energy lost " << fEnergyLoss/keV << " keV "  << std::endl;
-                return true;
-            }
-        }
+				aStep->GetTrack()->SetTrackStatus(fStopAndKill);
+				G4cout << " Track killed with track: " << fTotalTrackLength / nm << " nm with energy lost " << fEnergyLoss / keV << " keV " << G4endl;
+				return true;
+			}
+		}
         
         G4double edep = aStep->GetTotalEnergyDeposit();
         if ( edep > 0 ) {
@@ -111,16 +111,23 @@ G4bool TsSBSScoreGValue::ProcessHits(G4Step* aStep, G4TouchableHistory*)
                 if ( moleculeID == fMoleculeIDToScavenge[i] ) {
                     G4double probability = 1. - std::exp( -fScavengingCapacity[i] * t );
                     if ( G4UniformRand() < probability ) {
-                        std::cout << " scavenged " << molecule->GetName() << std::endl;
-                        aStep->GetTrack()->SetTrackStatus(fStopAndKill);
-                        return true;
-                    }
-                }
-            }
-        }
-    }
-    
-    return false;
+						// auto product = new G4Molecule(G4MoleculeTable::Instance()->GetConfiguration("Product"));
+						// auto productTrack = product->BuildTrack(aStep->GetPostStepPoint()->GetGlobalTime(), aTrack->GetPosition());
+
+						// productTrack->SetTrackStatus(fAlive);
+						// G4ITTrackHolder::Instance()->Push(productTrack);
+						// G4MoleculeFinder::Instance()->Push(productTrack);
+
+						std::cout << " scavenged " << molecule->GetName() << std::endl;
+						aStep->GetTrack()->SetTrackStatus(fStopAndKill);
+						return true;
+					}
+				}
+			}
+		}
+	}
+
+	return false;
 }
 
 
